@@ -1,0 +1,92 @@
+#modal{
+    background-color: #0E0A14ef;/*esse ef no final serve para deixar transparente*/
+    
+    height: 100vh;
+    width: 100vw;
+    
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    justify-content: center;/*faz ele ficar justificado no centro*/
+   align-items: center;/*alinhado no meio da tela*/
+
+    transition: 400ms;
+}
+
+#modal.hide/*não fica separado pq estou afirmando que o modal tem uma classe hide, eu não estou mandando ele buscar*/{
+    display: none;
+}
+
+#modal .content{
+    color: white;
+
+    width: 420px;
+}
+
+#modal .header{
+    display: flex;/*faz o botao fechar ficar na lateral*/
+    align-items: center;
+    justify-content: space-between;/*faz o fechar ficar mais na margen*/
+
+    margin-bottom: 48px;
+}
+
+
+#modal .header a{
+    background-image: url("../assets/x.svg");
+
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+
+    font-size: 0.01px;/* faz o "Fechar" ficar bem pequeno, só para os leitores de acessibilidade lerem*/
+}
+
+#modal .header h1{
+    color: white;
+
+    font-size: 36px;
+    line-height: 2px;
+}
+
+#modal form label{
+    font-size: 14px;
+    line-height: 16px;
+
+    display: block;
+    margin-bottom: 8px;
+}
+
+#modal form .field{
+    display: flex;
+}
+
+#modal form input{
+    flex: 1;/*faz o input ocupar todo o espaço do form*/
+
+    background-color: #f0f0f5;
+
+    border-radius: 8px 0 0 8px;
+    border: 0;
+
+    padding: 16px 24px;
+
+    font-size: 16px;
+    color: #6c6c80;
+}
+
+#modal form button{
+    width: 72px;
+    height: 72px;
+
+    background-color: var(--primary-color);
+
+    border: 0;
+    border-radius: 0 8px 8px 0;/*para fazer o botão e o input ficarem com a aparencia de grudados*/
+}
+
+#modal form button :hover{
+    background-color: #2fb85e;/*para alterar a cor quando passar o mouse por cima*/
+}

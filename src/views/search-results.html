@@ -17,36 +17,36 @@
 {%include "partials/page-header.html"%}
 <main>
 
-    <h4>
-        <strong>2 pontos</strong> encontrados
-    </h4>
+    {%if total > 0%}
+        <h4>
+            <strong>{{total}} pontos</strong> encontrados
+        </h4>
+        <div class="cards">
+            {%for place in places%}
+            
+                <div class="card">
+                    <img src="{{place.image}}"
+                        alt="{{place.name}}">
+                    <h1>{{place.name}}</h1>
+                    <h3>{{place.items}}</h3>
+                    <p>
+                        {{place.city}}, {{place.state}} <br />
+                        {{place.address}} </b>
+                        {{place.address2}}
+                    </p>
+                </div>
 
-    <div class="cards">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1563893848192-49d61781ccca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-                alt="Colectoria">
-            <h1>Colectoria</h1>
-            <h3>Resíduos Eletrônicos, Lâmpadas</h3>
-            <p>
-                Rio do Sul, Santa Catarina <br />
-                Guilherme Gemballa, Jardim América </b>
-                Nº 260
-            </p>
+            {%endfor%}
+
+
+        
         </div>
+    {%else%}
 
+        <h4> <strong>Nenhum</strong> local encontrado</h4>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=801&q=80"
-                alt="Paper Sider">
-            <h1>Papéis e Papelão</h1>
-            <h3>Resíduos Eletrônicos, Lâmpadas</h3>
-            <p>
-                Rio do Sul, Santa Catarina <br />
-                Guilherme Gemballa, Jardim América </b>
-                Nº 260
-            </p>
-        </div>
-    </div>
+    {%endif%}
+    
 </main>
 
 {%endblock content%}
